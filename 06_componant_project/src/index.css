@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.Card {
+  background-color: rgb(243, 90, 116);
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.nav-bar {
+  background-color: lightblue;
+  padding: 10px;
+}
+
+.nav-bar h1 {
+  margin-left: 20px;
+}
