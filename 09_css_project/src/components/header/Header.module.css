@@ -1,0 +1,13 @@
+.header {
+    background-color: lightseagreen;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    background-color: yellow;
+    border: 3px solid gainsboro;
+}
