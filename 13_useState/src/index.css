@@ -1,0 +1,15 @@
+.active {
+    background-color: red;
+}
+
+.box {
+    width: 300px;
+    height: 100px;
+    background-color: black;
+}
+
+.active-box {
+    width: 300px;
+    height: 100px;
+    background-color: darkred;
+}
