@@ -49,10 +49,6 @@ function App() {
         {/* Search */}
         <div className="flex gap-2">
           <input
-            onClick={() => {
-              search(title);
-              settitle("")
-            }}
             onChange={evt => settitle(evt.target.value)}
             type="text"
             placeholder="Search"

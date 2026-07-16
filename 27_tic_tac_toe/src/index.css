@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.img {
+    width: 50px;
+    display: inline;
+}
+
+.my-span {
+    color: rgb(4, 241, 4);
+}
