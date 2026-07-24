@@ -1,7 +1,8 @@
 import React from "react";
 import { MdDelete } from "react-icons/md";
+import { toast } from "react-toastify";
 
-const Card2 = ({ increaseQuantity,deleteItem, decreaseQuantity, name, id, price, image, quantity }) => {
+const Card2 = ({ increaseQuantity, deleteItem, decreaseQuantity, name, id, price, image, quantity }) => {
     return (
         <div className="w-full flex items-center gap-4  bg-white shadow-md p-2 pb-4 mb-4">
 
@@ -22,7 +23,10 @@ const Card2 = ({ increaseQuantity,deleteItem, decreaseQuantity, name, id, price,
                     </h3>
 
                     <MdDelete
-                    onClick={()=>deleteItem(id)}
+                        onClick={() => {
+                            deleteItem(id)
+                            toast.error("item is deleted...")
+                        }}
                         className="text-red-500 text-xl cursor-pointer hover:text-red-700"
                     />
                 </div>

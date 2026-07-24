@@ -6,6 +6,7 @@ import { food_items } from '../food'
 import { DataContext } from '../context/UserContext'
 import { RxCross2 } from "react-icons/rx";
 import Card2 from '../components/Card2'
+import { toast } from 'react-toastify'
 
 const Home = () => {
     const { foodCategories, setfoodCategories, input, showCard, setshowCard } = useContext(DataContext);
@@ -96,6 +97,11 @@ const Home = () => {
                     )
                 })}
             </div> : null}
+
+            {foodCategories.length == 0 &&
+                <div className='w-full mt-20 font-extrabold text-green-500 text-7xl flex justify-center  '>
+                    No Dish Found
+                </div>}
             <div className='flex flex-wrap justify-center gap-5 items-center pt-8 pb-8'>
                 {
                     foodCategories.map((item, index) => {
@@ -111,7 +117,10 @@ const Home = () => {
                         onClick={() => setshowCard(false)}
                         className='text-green-400 text-2xl w-7 cursor-pointer hover:text-gray-500 h-7' />
                 </header>
-
+                {cart.length == 0 &&
+                    <div
+                        className='text-green-500 text-5xl font-bold w-full flex justify-center mt-25'
+                    >Cart is Empty</div>}
                 {
                     cart.map((item, index) => {
                         return <Card2 key={index} deleteItem={deleteItem} decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} quantity={item.quantity} name={item.name} price={item.price} id={item.id} image={item.image} />
@@ -181,7 +190,9 @@ const Home = () => {
 
                         {/* Place Order */}
 
-                        <button className="w-full bg-green-500 text-white py-3 mt-6 rounded-md">
+                        <button 
+                        onClick={()=>toast.success("Order succefully Placed...")}
+                        className="w-full bg-green-500 text-white py-3 mt-6 rounded-md">
 
                             Place Order
 
